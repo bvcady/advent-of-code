@@ -1,0 +1,10 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["@humanoids/eslint-config", "plugin:cypress/recommended"],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off"
+  }
+}

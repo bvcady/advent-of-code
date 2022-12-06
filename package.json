@@ -1,0 +1,40 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "Advent of code results repo",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "NODE_NO_WARNINGS=1 node  --loader ts-node/esm getSolutions.ts",
+    "new-day": "node new-day.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BobVerheij/advent-of-code.git"
+  },
+  "keywords": [
+    "aoc",
+    "advent",
+    "of",
+    "code"
+  ],
+  "author": "Bob Verheij",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BobVerheij/advent-of-code/issues"
+  },
+  "homepage": "https://github.com/BobVerheij/advent-of-code#readme",
+  "dependencies": {
+    "@humanoids/eslint-config": "^0.0.14",
+    "@humanoids/prettier-config": "^0.0.4",
+    "@types/node": "^18.11.11",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}
