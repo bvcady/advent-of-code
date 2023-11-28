@@ -5,7 +5,8 @@ export const getInput = (file: string) => {
   return fileContent.split("\n");
 };
 
-export const alphaBet: string[] = "_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+export const alphaBet: string[] =
+  "_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 // Reworked the solution back from Part 2 as I didn't have the repo before and didn't save my work for Part 1 separate
 export const solution = (file: string) => {
@@ -15,8 +16,12 @@ export const solution = (file: string) => {
     (acc, line) =>
       acc +
       alphaBet.indexOf(
-        line.split("").find((char) => line.slice(-(line.length / 2)).includes(char)) as string,
+        line
+          .split("")
+          .find((char) =>
+            line.slice(-(line.length / 2)).includes(char)
+          ) as string
       ),
-    0,
+    0
   );
 };
