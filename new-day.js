@@ -38,8 +38,11 @@ const createNewDay = async (y, d) => {
 
   if (!(year && day)) {
     if (!year) {
-      const yearInput = prompt("What year?\n", new Date().getFullYear());
-      year = yearInput;
+      const yearInput = prompt(
+        `What year? (defaults to ${new Date().getFullYear()}): `,
+        new Date().getFullYear()
+      );
+      year = yearInput.toString().trim();
       console.log(yearInput);
     }
 
@@ -48,8 +51,11 @@ const createNewDay = async (y, d) => {
     }
 
     if (!day) {
-      const dayInput = prompt("What day?\n", new Date().getDate());
-      day = dayInput;
+      const dayInput = prompt(
+        `What day? (defaults to ${("0" + new Date().getDate()).slice(-2)}): `,
+        new Date().getDate()
+      );
+      day = dayInput.toString().trim();
       console.log(dayInput);
     }
 
@@ -133,7 +139,7 @@ const createNewDay = async (y, d) => {
 
   console.log(
     "\x1b[46m",
-    `👍 Succesfully created day ${day} in ${year} for you!`
+    `👍 Succesfully updated day ${day} in ${year} for you!`
   );
 };
 

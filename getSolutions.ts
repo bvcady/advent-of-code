@@ -16,25 +16,29 @@ const solveSolutions = async () => {
   let day = d;
   if (!(year && day)) {
     if (!year) {
-      const yearInput = prompt("What year?\n", new Date().getFullYear());
-      year = yearInput;
+      const yearInput = prompt(
+        `What year? (defaults to ${new Date().getFullYear()}): `,
+        new Date().getFullYear()
+      );
+      year = yearInput.toString().trim();
       console.log(yearInput);
     }
 
     if (year && !Number(year)) {
-      console.log("Next time please provide a number as a year.");
-      return;
+      return console.log("Next time please provide a number as a year.");
     }
 
     if (!day) {
-      const dayInput = prompt("What day?\n", new Date().getDate());
-      day = dayInput;
+      const dayInput = prompt(
+        `What day? (defaults to ${("0" + new Date().getDate()).slice(-2)}): `,
+        new Date().getDate()
+      );
+      day = dayInput.toString().trim();
       console.log(dayInput);
     }
 
     if (day && !Number(day)) {
-      console.log("Next time please provide a number as a day.");
-      return;
+      return console.log("Next time please provide a number as a day.");
     }
   }
 
