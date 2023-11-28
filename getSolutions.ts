@@ -7,13 +7,13 @@ const args = process.argv.slice(2);
 const y = args[0];
 const d = args[1];
 
-const test = args[2];
-
 const solveSolutions = async () => {
   let input: string;
 
   let year = y;
   let day = d;
+  let test = args[2];
+
   if (!(year && day)) {
     if (!year) {
       const yearInput = prompt(
@@ -40,6 +40,26 @@ const solveSolutions = async () => {
     if (day && !Number(day)) {
       return console.log("Next time please provide a number as a day.");
     }
+  }
+
+  if (args[2] !== "test") {
+    const autocomplete = ["y", "n", "yes", "no"];
+    const defaultOption = "yes";
+    const testInput = prompt(
+      `Running for test? (defaults to ${defaultOption}): `,
+      defaultOption,
+      {
+        autocomplete,
+      }
+    )
+      ?.toString()
+      ?.trim();
+
+    if (!autocomplete?.includes(testInput)) {
+      return console.log("Please only select [yes/no] or [y/n]");
+    }
+    test = testInput === "yes" || testInput === "y" ? "test" : "";
+    console.log(testInput);
   }
 
   if (test !== "test ") {
@@ -122,7 +142,7 @@ const solveSolutions = async () => {
       response.push(`The test answer to part 2 is ${solTwo}.`);
       response.push(`Expected awnser: ${testAnswerTwo}`);
       response.push(
-        solOne.toString() === testAnswerTwo
+        solTwo.toString() === testAnswerTwo
           ? "🎉 The provided answer is correct"
           : "😠 The provided anser is incorrect"
       );
