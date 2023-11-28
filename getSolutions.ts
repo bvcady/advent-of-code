@@ -1,4 +1,4 @@
-import fs, { readFile, readFileSync } from "node:fs";
+import fs, { readFileSync } from "node:fs";
 import path from "node:path";
 const prompt = require("prompt-sync")({ sigint: true });
 
@@ -180,34 +180,3 @@ const solveSolutions = async () => {
   } else logRealAwnsers();
 };
 solveSolutions();
-
-// if (solOne) {
-//   answerString =
-//     answerString +
-//     `The ${test ? "test " : ""}answer to part 1 is ${solOne}. ${
-//       test ? `\nExpected awnser: ${testAnswerOne}` : ""
-//     } ${
-//       testAnswerOne === solOne.toString()
-//         ? "\n🎉 The provided answer is correct"
-//         : "\n😠 The provided anser is incorrect"
-//     }`;
-// } else {
-//   answerString =
-//     answerString + `There is no ${test ? "test " : ""}answer for part 1 (yet).`;
-// }
-
-// if (solTwo) {
-//   answerString =
-//     answerString +
-//     `\n \nThe ${test ? "test " : ""}answer to part 2 is ${solTwo}. ${
-//       test ? `\nExpected awnser: ${testAnswerTwo}` : ""
-//     } ${
-//       testAnswerTwo === solTwo.toString()
-//         ? "\n🎉 The provided answer is correct"
-//         : "\n😠 The provided anser is incorrect"
-//     }`;
-// } else {
-//   answerString =
-//     answerString +
-//     ` There is no ${test ? "test " : ""}answer for part 2 (yet).`;
-// }
