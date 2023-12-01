@@ -84,21 +84,33 @@ const createNewDay = async (y, d) => {
       }
 
       checkAndCreateFile({
-        pathString: `input/${year}/${day}/input.txt`,
+        pathString: `input/${year}/${day}/input-one.txt`,
         fileType: "input",
-        fileContent: "[insert excercise input]",
+        fileContent: "[insert excercise input part one]",
         year,
         day,
       });
-
       checkAndCreateFile({
-        pathString: `input/${year}/${day}/test-input.txt`,
-        fileType: "test input",
-        fileContent: "[insert test input]",
+        pathString: `input/${year}/${day}/input-two.txt`,
+        fileType: "input",
+        fileContent: "[insert excercise input part two]",
         year,
         day,
       });
-
+      checkAndCreateFile({
+        pathString: `input/${year}/${day}/test-input-one.txt`,
+        fileType: "input",
+        fileContent: "[insert test input part one]",
+        year,
+        day,
+      });
+      checkAndCreateFile({
+        pathString: `input/${year}/${day}/test-input-two.txt`,
+        fileType: "test input",
+        fileContent: "[insert test input part two]",
+        year,
+        day,
+      });
       checkAndCreateFile({
         pathString: `input/${year}/${day}/test-output.txt`,
         fileType: "test output",
