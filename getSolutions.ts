@@ -8,7 +8,8 @@ const y = args[0];
 const d = args[1];
 
 const solveSolutions = async () => {
-  let input: string;
+  let inputOne: string;
+  let inputTwo: string;
 
   let year = y;
   let day = d;
@@ -62,23 +63,33 @@ const solveSolutions = async () => {
     console.log(testInput);
   }
 
-  if (test !== "test ") {
-    input = `./input/${year}/${day}/input.txt`;
+  if (test !== "test") {
+    inputOne = `./input/${year}/${day}/input-one.txt`;
+    inputTwo = `./input/${year}/${day}/input-two.txt`;
   } else {
-    input = `./input/${year}/${day}/test-input.txt`;
+    inputOne = `./input/${year}/${day}/test-input-one.txt`;
+    inputTwo = `./input/${year}/${day}/test-input-two.txt`;
   }
 
   const excerciseOneExists = fs.existsSync(`./src/${year}/${day}/01.ts`);
   if (!excerciseOneExists) {
     return console.log(
-      `The excercise file was empty for ${year} - ${day} - excercise one`
+      `The excercise file was empty for ${year} - ${day} - excercise part one`
     );
   }
 
-  const inputExists = fs.existsSync(input);
+  const inputOneExists = fs.existsSync(inputOne);
+  const inputTwoExists = fs.existsSync(inputTwo);
 
-  if (!inputExists) {
-    return console.log(`The input file was empty for ${year} - ${day}`);
+  if (!inputOneExists) {
+    return console.log(
+      `The input file (part one) was empty for ${year} - ${day}`
+    );
+  }
+  if (!inputTwoExists) {
+    return console.log(
+      `The input file (part two) was empty for ${year} - ${day}`
+    );
   }
 
   const {
@@ -90,7 +101,7 @@ const solveSolutions = async () => {
   const excerciseTwoExists = fs.existsSync(`./src/${year}/${day}/02.ts`);
   if (!excerciseTwoExists) {
     return console.log(
-      `The excercise file was empty for ${year} - ${day} - excercise two`
+      `The excercise file was empty for ${year} - ${day} - excercise part two`
     );
   }
 
@@ -100,8 +111,8 @@ const solveSolutions = async () => {
     `./src/${year}/${day}/02.ts`
   );
 
-  const solOne = firstSolution(input);
-  const solTwo = secondSolution(input);
+  const solOne = firstSolution(inputOne);
+  const solTwo = secondSolution(inputTwo);
 
   const testAnswersExists = fs.existsSync(
     path.join(__dirname, `input/${year}/${day}/test-output.txt`)
