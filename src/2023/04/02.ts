@@ -33,28 +33,26 @@ export const solution = (file: string): string | number => {
     };
   });
 
-  const cardDistribution: Record<string, { n: number; nWinning: number }> =
-    new Array(input.length).fill("").reduce((acc, _, index) => {
+  const cardDistribution: Record<string, number> = new Array(input.length)
+    .fill("")
+    .reduce((acc, _, index) => {
       return {
         ...acc,
-        [index + 1]: {
-          n: 1,
-          nWinning: cards.find((c) => c.game === index + 1)?.newCards?.length,
-        },
+        [index + 1]: 1,
       };
     }, {});
 
   cards?.forEach((card) => {
     const game = card.game;
-    const nDis = cardDistribution[game]?.n;
+    const nDis = cardDistribution[game];
 
     for (let i = 0; i < nDis; i++) {
-      card.newCards.forEach((_c) => (cardDistribution[_c].n += 1));
+      card.newCards.forEach((_c) => (cardDistribution[_c] += 1));
     }
   });
 
   return Object.keys(cardDistribution).reduce(
-    (tot, cur) => (tot += cardDistribution[cur].n),
+    (tot, cur) => (tot += cardDistribution[cur]),
     0
   );
 };
