@@ -1,2 +1,2 @@
-[expected output part 1]
+288
 [expected output part 2]
