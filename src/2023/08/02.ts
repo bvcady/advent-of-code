@@ -41,9 +41,31 @@ export const solution = (file: string): string | number => {
 
   const dirs = [...positions].map((p) => getPath(p));
   console.log(dirs);
+
   // I did not write a script but I knew I'd have to use a way to find the least common multiple of the 6 paths.
   // I used an online source that gave me the answer.
-  // I might write a script myself in the future.
+  // I managed to copy / write a script myself after:
+
+  const getGCD = (a: number, b: number): number => {
+    if (b === 0) {
+      return a;
+    }
+    return getGCD(b, a % b);
+  };
+
+  const getLCMofArray = (input: number[], index: number): number => {
+    if (index === input.length - 1) {
+      return input[index];
+    }
+
+    let a = input[index];
+    let b = getLCMofArray(input, index + 1);
+
+    return (a * b) / getGCD(a, b);
+  };
+
+  const lcm = getLCMofArray(dirs, 0);
+  console.log(lcm);
 
   //  Below is a brute force method, which would take ours.
 
