@@ -88,7 +88,7 @@ export const solution = (file: string): string | number => {
 
   //   dirPos++;
   // }
-  return 0;
+  return lcm;
 };
 
 // const current = position;
