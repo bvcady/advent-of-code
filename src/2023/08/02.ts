@@ -67,7 +67,7 @@ export const solution = (file: string): string | number => {
   const lcm = getLCMofArray(dirs, 0);
   console.log(lcm);
 
-  //  Below is a brute force method, which would take ours.
+  //  Below is a brute force method, which would take hours.
 
   // while (!allFinished) {
   //   if (dirPos % 10000 === 0) {
