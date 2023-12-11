@@ -104,8 +104,8 @@ export const solution = (file: string): string | number => {
         else alreadySeen[str] = true;
       });
 
-    console.log("opts", opts);
-    console.log("starting from", char);
+    // console.log("opts", opts);
+    // console.log("starting from", char);
     return char as Pipe;
   };
 
@@ -161,7 +161,7 @@ export const solution = (file: string): string | number => {
 
   while (!end) {
     const ret = progress();
-    coords.push(ret);
+    // coords.push(ret);
     // console.log(n, ret);
     // if (n % 1000 === 0) console.log(n, ret);
     if (ret[2] === "☺") {
@@ -170,6 +170,6 @@ export const solution = (file: string): string | number => {
     n++;
   }
   // console.log(n, coords[n]);
-  console.log(coords.slice(0, 10));
+  // console.log(coords.slice(0, 10));
   return n / 2;
 };

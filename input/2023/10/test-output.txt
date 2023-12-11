@@ -1,2 +1,2 @@
 8
-[expected output part 2]
+8
