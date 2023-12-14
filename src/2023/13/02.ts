@@ -43,18 +43,14 @@ export const solution = (file: string): string | number => {
         b--;
       }
 
-      if (trueMirror) {
+      if (trueMirror && totSmudges === 1) {
         inputBeforeB.forEach((l) => console.log("\x1b[33m%s\x1b[0m", l));
         console.log("\x1b[33m%s\x1b[0m", input[mirroredOpt]);
         console.log("\x1b[43m%s\x1b[0m", "-".repeat(input[0].length));
         console.log("\x1b[33m%s\x1b[0m", input[mirroredOpt + 1]);
         inputAfterA.forEach((l) => console.log("\x1b[33m%s\x1b[0m", l));
         // // console.log("\n");
-        console.log(
-          trueMirror && totSmudges === 1 ? "true mirror" : "false mirror",
-          "at",
-          mirroredOpt + 1
-        );
+        console.log("true mirror at", mirroredOpt + 1);
       }
 
       return trueMirror && totSmudges === 1 ? mirroredOpt : null;
