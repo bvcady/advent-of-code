@@ -33,7 +33,6 @@ export class Memo {
     return (...args: Args) => {
       const key = JSON.stringify(args);
       if (this.stored.has(key)) {
-        console.log("Already stored", this.nSet + this.nGet);
         this.nGet++;
         return this.stored.get(key)! as Result;
       }

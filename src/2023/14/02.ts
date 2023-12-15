@@ -186,7 +186,7 @@ export const solution = (file: string): string | number => {
   let i = 0;
   let check = true;
 
-  let steps = [] as number[];
+  let steps = 0;
 
   while (check) {
     const newBoulders = slideInDirection(i % 4, currentBoulders);
@@ -195,12 +195,7 @@ export const solution = (file: string): string | number => {
       console.log(i, "loop recognized");
     } else {
       currentBoulders = newBoulders;
-      steps.push(
-        currentBoulders.reduce(
-          (total, boulder) => floorHeight - boulder.y + total,
-          0
-        )
-      );
+      steps++;
     }
     if (i % 100 === 0) {
       console.log(memo.stores.map((s) => s.size));
@@ -208,9 +203,10 @@ export const solution = (file: string): string | number => {
     i++;
   }
 
-  console.log("steps", steps.join(" -- "));
+  console.log("steps", steps);
 
-  const stepsUntilLoopRecognized = steps.length;
+  const stepsUntilLoopRecognized = steps;
+
   console.log({ stepsUntilLoopRecognized });
   memo.clearMemo();
 
