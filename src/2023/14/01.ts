@@ -9,7 +9,7 @@ export const getInput = (file: string) => {
 
 type Pos = { x: number; y: number };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const input = getInput(file).map((line) => {
     // @ts-ignore
     return line.replaceAll("#", "■").replaceAll("O", "◯");

@@ -5,7 +5,7 @@ export const getInput = (file: string) => {
   return fileContent;
 };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const input = getInput(file);
 
   const hashNums = input.split(",").map((val) =>

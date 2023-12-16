@@ -94,7 +94,7 @@ const solveSolutions = async () => {
 
   const {
     solution: firstSolution,
-  }: { solution: (input: string) => string | number } = await import(
+  }: { solution: (input: string) => Promise<string | number> } = await import(
     `./src/${year}/${day}/01.ts`
   );
 
@@ -107,12 +107,12 @@ const solveSolutions = async () => {
 
   const {
     solution: secondSolution,
-  }: { solution: (input: string) => string | number } = await import(
+  }: { solution: (input: string) => Promise<string | number> } = await import(
     `./src/${year}/${day}/02.ts`
   );
 
-  const solOne = firstSolution(inputOne);
-  const solTwo = secondSolution(inputTwo);
+  const solOne = await firstSolution(inputOne);
+  const solTwo = await secondSolution(inputTwo);
 
   const testAnswersExists = fs.existsSync(
     path.join(__dirname, `input/${year}/${day}/test-output.txt`)

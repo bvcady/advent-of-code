@@ -71,7 +71,7 @@ const findCorrectAttempts = (
   return { correctAttempts, binaries };
 };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const input = prior.getInput(file);
 
   const records = input.map((line) => {

@@ -23,7 +23,7 @@ export const getInput = (file: string): string[] => {
   );
 };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const input = getInput(file);
   const upOptions = "┓ ┏ ┃".replace(" ", "");
   const downOptions = "┗  ┛ ┃".replace(" ", "");

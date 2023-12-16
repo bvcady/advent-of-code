@@ -5,7 +5,7 @@ export const getInput = (file: string) => {
   return fileContent.split("\n");
 };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const rankings = [2, 3, 4, 5, 6, 7, 8, 9, "T", "J", "Q", "K", "A"].map(
     (item) => item.toString()
   );

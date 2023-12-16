@@ -1,6 +1,6 @@
 import * as prior from "./01";
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const rankings = ["J", 2, 3, 4, 5, 6, 7, 8, 9, "T", "Q", "K", "A"].map(
     (item) => item.toString()
   );

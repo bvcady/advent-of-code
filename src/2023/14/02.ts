@@ -3,7 +3,7 @@ import { DirectionalMemoization } from "../../../utils/customMemoize";
 
 type Pos = { x: number; y: number };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const input = prior.getInput(file).map((line) => {
     // @ts-ignore
     return line.replaceAll("#", "■").replaceAll("O", "◯");

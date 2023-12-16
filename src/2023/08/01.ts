@@ -7,7 +7,7 @@ export const getInput = (file: string) => {
 
 type Node = { from: string; dir: { L: string; R: string } };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const input = getInput(file);
 
   const [directions, nodesRaw] = input.split("\n\n");

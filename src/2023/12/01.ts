@@ -5,7 +5,7 @@ export const getInput = (file: string) => {
   return fileContent.split("\n");
 };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   // Very poorly optimized solution for Part 1. Overcomplicating things with converting the posibilities for ? to a binary number.
   // Then the binary digits were counted (to see there were as many as the required broken gears, minus the gears in the list already),
   // and then converted to either # or a .

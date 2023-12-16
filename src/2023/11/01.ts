@@ -5,7 +5,7 @@ export const getInput = (file: string) => {
   return fileContent.split("\n");
 };
 
-export const solution = (file: string): string | number => {
+export const solution = async (file: string): Promise<string | number> => {
   const input = getInput(file);
 
   return 9742154;
